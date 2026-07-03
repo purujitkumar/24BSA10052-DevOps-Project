@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: technova-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: technova
+  template:
+    metadata:
+      labels:
+        app: technova
+    spec:
+      containers:
+      - name: technova-container
+        image: 24bsa10052-purujitkumar-devops-project:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
